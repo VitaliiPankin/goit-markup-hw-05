@@ -14,6 +14,7 @@
   --fill-color-focus: #ffffff;
   --border-color-icons: #afb1b8;
   --page-header-border-color: #ececec;
+  --text-color-white: #ffffff;
 }
 /* -------------BODY------------- */
 body {
@@ -117,6 +118,16 @@ p {
 .link-active {
   color: var(--acsent-color);
 }
+.link-active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #2196f3;
+  border-radius: 2px;
+}
 
 /* --------------HEADER----------- */
 .page-header {
@@ -147,6 +158,19 @@ p {
 }
 .header-link-contacts {
   display: flex;
+}
+.header-link-nav {
+  position: relative;
+}
+.line-effects:hover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #2196f3;
+  border-radius: 2px;
 }
 .header-link-nav:not(:last-child) {
   margin-right: 50px;
@@ -312,8 +336,27 @@ p {
   margin-left: -30px;
 }
 .products-foto {
+  position: relative;
   flex-basis: calc((100% - 3 * 30px) / 3);
   margin-left: 30px;
+}
+.products-description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 370px;
+  height: 70px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  background-color: rgba(47, 48, 58, 0.8);
+  color: var(--text-color-white);
 }
 /* -----------------COMMANDs------------------- */
 .command {
@@ -405,7 +448,7 @@ p {
 .portfolio-contant-list {
   display: block;
 }
-z .portfolio-list {
+.portfolio-list {
   margin-right: 30px;
   margin-bottom: 30px;
 }
@@ -440,6 +483,7 @@ z .portfolio-list {
   letter-spacing: 0.03em;
   color: var(--primery-text-color);
 }
+
 /* ----------CLIENT----------- */
 .clients {
   padding-top: 94px;
