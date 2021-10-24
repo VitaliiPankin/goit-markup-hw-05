@@ -99,6 +99,7 @@ p {
 .site-nav .link:hover,
 .site-nav .link:focus {
   color: var(--acsent-color);
+  transition: 250ms;
 }
 .auth-nav {
   display: flex;
@@ -110,6 +111,7 @@ p {
 .auth-nav .link:focus {
   color: var(--acsent-color);
   fill: var(--acsent-color);
+  transition: 250ms;
 }
 .link-contacs {
   color: var(--primery-text-color);
@@ -162,7 +164,8 @@ p {
 .header-link-nav {
   position: relative;
 }
-.line-effects:hover::after {
+.line-effects:hover::after,
+.line-effects:focus::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -171,6 +174,7 @@ p {
   height: 4px;
   background: #2196f3;
   border-radius: 2px;
+  transition: 250ms;
 }
 .header-link-nav:not(:last-child) {
   margin-right: 50px;
@@ -196,6 +200,7 @@ p {
 .button:focus {
   background-color: var(--button-hover-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: 250ms;
 }
 
 .button-text {
@@ -230,6 +235,7 @@ p {
   background-color: var(--color-logo);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
+  transition: 250ms;
 }
 
 .buttons-secondary-text {
@@ -275,6 +281,47 @@ p {
 
   letter-spacing: 0.06em;
   text-transform: uppercase;
+}
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 9;
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 528px;
+  height: 581px;
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.btn-close {
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  background-color: var(--background-color);
+  background-image: url(../images/icons/close.svg);
+  background-repeat: no-repeat;
+  background-size: 18px;
+  background-position: center;
 }
 /* --------------PECULIARITIES----------------- */
 
@@ -423,6 +470,7 @@ p {
 .command-network-link:focus {
   background-color: var(--acsent-color);
   fill: var(--logo-color-studio-footer);
+  transition: 250ms;
 }
 
 .command-list-link:not(:last-child) {
@@ -456,6 +504,7 @@ p {
 .portfolio-contant-list:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+  transition: 250ms;
 }
 
 .portfolio-list:nth-last-child(-n + 3) {
@@ -468,6 +517,36 @@ p {
   width: 370px;
   padding: 20px 24px;
   border: 1px solid #eeeeee;
+}
+
+.aaa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 370px;
+  height: 294px;
+  background-color: rgba(33, 150, 243, 0.9);
+  transform: translateY(100%);
+  transition: transform 250ms ease;
+}
+.bbb {
+  width: 322px;
+  font-weight: 400;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+
+  color: var(--text-color-white);
+}
+.ccc {
+  position: relative;
+  overflow: hidden;
+}
+.portfolio-list:hover .aaa,
+.portfolio-list:focus .aaa {
+  transform: translateY(0);
 }
 .portfolio-main-text {
   font-weight: 700;
@@ -516,6 +595,7 @@ p {
 .clients-link:focus {
   border-color: var(--acsent-color);
   fill: var(--acsent-color);
+  transition: 250ms;
 }
 .clients-list:not(:last-child) {
   margin-right: 30px;
@@ -563,6 +643,7 @@ footer {
 .a-c-hover-focus:focus,
 .a-c-hover-focus:hover {
   color: var(--acsent-color);
+  transition: 250ms;
 }
 .company-contacts {
   font-size: 14px;
@@ -599,6 +680,7 @@ footer {
 .fotter-network-link:hover,
 .fotter-network-link:focus {
   background-color: var(--acsent-color);
+  transition: 250ms;
 }
 
 .fotter-list-network:not(:last-child) {

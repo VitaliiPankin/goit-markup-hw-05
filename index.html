@@ -74,9 +74,14 @@
       <section class="hero hero-bgpfoto">
         <div class="container">
           <h1 class="hero-text">Эффективные решения для вашего бизнеса</h1>
-          <button class="button button-text" type="button">
+          <button class="button button-text" type="button" data-modal-open>
             Заказать услугу
           </button>
+        </div>
+        <div class="backdrop is-hidden" data-modal>
+          <div class="modal">
+            <button class="btn-close" type="button" data-modal-close></button>
+          </div>
         </div>
       </section>
       <section class="peculiarities-sections">
@@ -538,5 +543,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
